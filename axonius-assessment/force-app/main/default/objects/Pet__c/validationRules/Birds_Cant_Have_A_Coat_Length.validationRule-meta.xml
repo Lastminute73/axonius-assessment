@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Birds_Cant_Have_A_Coat_Length</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+    ISPICKVAL ( Species__c, &apos;Bird&apos; ),
+    NOT ( ISPICKVAL ( Coat_Length__c, &apos;N/A&apos; ) ) 
+    )</errorConditionFormula>
+    <errorDisplayField>Coat_Length__c</errorDisplayField>
+    <errorMessage>A bird&apos;s coat length should be &apos;N/A&apos;.</errorMessage>
+</ValidationRule>

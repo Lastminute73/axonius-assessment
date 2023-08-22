@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Todays_Sessions</fullName>
+    <columns>NAME</columns>
+    <columns>Session_Date__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Training_Package_Type__c</columns>
+    <columns>Trainer__c</columns>
+    <columns>Veterinarian__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Session_Date__c</field>
+        <operation>equals</operation>
+        <value>TODAY</value>
+    </filters>
+    <label>Todays Sessions</label>
+</ListView>

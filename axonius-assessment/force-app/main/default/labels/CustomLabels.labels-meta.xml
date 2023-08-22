@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>Pet_Owner_Contact_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Pet Owner Contact Record Type</shortDescription>
+        <value>012Hp000001Yv4rIAC</value>
+    </labels>
+    <labels>
+        <fullName>System_Task_Queue</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>System Task Queue</shortDescription>
+        <value>00GHp000004ty20</value>
+    </labels>
+    <labels>
+        <fullName>Trainer_Contact_Record_Type</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Trainer Contact Record Type</shortDescription>
+        <value>012Hp000001Yv4wIAC</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <description>When an attendee is assigned to a trainer then calculate the total number of attendees that the trainer has been assigned to.</description>
+    <environments>Default</environments>
+    <interviewLabel>New Attendee - Count Trainers Totals {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>New Attendee - Count Trainers Totals</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Trainer__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <object>Training_Attendee__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <scheduledPaths>
+            <connector>
+                <targetReference>calculate_trainer_sessions</targetReference>
+            </connector>
+            <pathType>AsyncAfterCommit</pathType>
+        </scheduledPaths>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <subflows>
+        <name>calculate_trainer_sessions</name>
+        <label>calculate trainer sessions</label>
+        <locationX>308</locationX>
+        <locationY>276</locationY>
+        <flowName>Calculate_Trainer_Sessions</flowName>
+        <inputAssignments>
+            <name>TrainerId</name>
+            <value>
+                <elementReference>$Record.Trainer__c</elementReference>
+            </value>
+        </inputAssignments>
+    </subflows>
+</Flow>

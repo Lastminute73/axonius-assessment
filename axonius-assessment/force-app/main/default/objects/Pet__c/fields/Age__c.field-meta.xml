@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Age__c</fullName>
+    <description>Age of pet to the nearest half year.</description>
+    <externalId>false</externalId>
+    <formula>FLOOR(
+  (TODAY() - Birthday__c) / 365.25
+) +
+IF(
+  MOD((TODAY() - Birthday__c), 365.25) &gt;= 182.625,
+  0.5,
+  0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Age</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>
